@@ -75,13 +75,11 @@ def customer_can_afford_pet(cust, new_pet):
 #add money to cc_pet_shop['total_cash] 2
 
 
-def sell_pet_to_customer(list, buy_pet, cust):
-    
+def sell_pet_to_customer(list, sell_pet, cust):
     for pet in list['pets']:
-        if pet == buy_pet:
-            cust['pets'].append(pet)
+        if pet == sell_pet:
             list['pets'].remove(pet)
-    list['admin']['total_cash'] += buy_pet['price']
-    cust['cash'] -= buy_pet['price']
-    list["admin"]['pets_sold'] += 1
-
+            list['admin']['total_cash'] += sell_pet['price']
+            list["admin"]['pets_sold'] += 1
+            cust['cash'] -= sell_pet['price']
+            cust['pets'].append(pet)
