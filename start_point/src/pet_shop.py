@@ -83,3 +83,4 @@ def sell_pet_to_customer(list, sell_pet, cust):
             list["admin"]['pets_sold'] += 1
             cust['cash'] -= sell_pet['price']
             cust['pets'].append(pet)
+ 
