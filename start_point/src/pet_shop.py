@@ -76,6 +76,7 @@ def customer_can_afford_pet(cust, new_pet):
 
 
 def sell_pet_to_customer(list, buy_pet, cust):
+    
     for pet in list['pets']:
         if pet == buy_pet:
             cust['pets'].append(pet)
@@ -84,5 +85,3 @@ def sell_pet_to_customer(list, buy_pet, cust):
     cust['cash'] -= buy_pet['price']
     list["admin"]['pets_sold'] += 1
 
-
-def      
