@@ -9,21 +9,21 @@ def get_total_cash(list):
 
 def add_or_remove_cash(list, num):
     list["admin"]['total_cash'] += num
-    return list
+    return list  # not actualy required as the test file does not need a var returned
 
 def get_pets_sold(list):
     return list["admin"]['pets_sold']
 
 def increase_pets_sold(list, num):
     list["admin"]['pets_sold'] += num
-    return list
+    return list  # not actualy required as the test file does not need a var returned
 
 def get_stock_count(list):
     return len(list['pets'])
 
 def get_pets_by_breed(list, breed):
     found_pets = []
-    for pet in list['pets']:     # LIST INSIDE A DICT
+    for pet in list['pets']:        # LIST INSIDE A DICT
         if pet['breed'] == breed:
             found_pets.append(pet)
     return found_pets
@@ -83,4 +83,3 @@ def sell_pet_to_customer(list, sell_pet, cust):
             list["admin"]['pets_sold'] += 1
             cust['cash'] -= sell_pet['price']
             cust['pets'].append(pet)
- 
